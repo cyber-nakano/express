@@ -1,6 +1,10 @@
 var express = require("express");
 var router = express.Router();
 const request = require("request");
+const cors = require("cors"); // corsミドルウェアを追加
+
+// corsミドルウェアを使用
+router.use(cors()); // enable CORS for all routes in this router
 
 router.get("/", async (req, res) => {
   request(
